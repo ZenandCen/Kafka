@@ -1,0 +1,20 @@
+{
+  "name": "opensearch-sink-wallet-connector",
+  "config": {
+    "connector.class": "io.github.jenses.openconnect.OpenSearchSinkConnector",
+    "tasks.max": "2",
+    "topics": "wallet-transactions,wallet-fraud-alerts",
+    "connection.url": "http://opensearch-node:9200",
+    "type.name": "_doc",
+    "key.ignore": "false",
+    "schema.ignore": "true",
+    "identifier.fields": "transactionId",
+    "drop.invalid.message": "true",
+    "behavior.on.null.values": "ignore",
+    "bulk.size": "100",
+    "flush.timeout.ms": "1000",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false"
+  }
+}
