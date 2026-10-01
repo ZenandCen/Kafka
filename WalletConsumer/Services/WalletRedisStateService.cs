@@ -9,7 +9,7 @@ public class WalletRedisStateService
     private readonly ILogger<WalletRedisStateService> _logger;
     private readonly IDatabase _redisDb;
 
-    public WalletRedisStateService(ILogger<WalletRedisStateService> logger, string redisConnectionString = "localhost:6379")
+    public WalletRedisStateService(ILogger<WalletRedisStateService> logger, string redisConnectionString = "localhost:26379,localhost:26380,localhost:26381,role:sentinel")
     {
         _logger = logger;
         try

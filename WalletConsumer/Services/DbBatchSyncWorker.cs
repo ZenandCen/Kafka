@@ -9,7 +9,7 @@ public class DbBatchSyncWorker : BackgroundService
     private readonly ILogger<DbBatchSyncWorker> _logger;
     private readonly IConnectionMultiplexer? _redis;
 
-    public DbBatchSyncWorker(ILogger<DbBatchSyncWorker> logger, string redisConnectionString = "localhost:6379")
+    public DbBatchSyncWorker(ILogger<DbBatchSyncWorker> logger, string redisConnectionString = "localhost:26379,localhost:26380,localhost:26381,role:sentinel")
     {
         _logger = logger;
         try
